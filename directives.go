@@ -18,7 +18,7 @@ const (
 	DirectiveTypeDialogConfirmIntent
 )
 
-// PropTypes for use outside this module
+// directiveTypeStrings for use outside this module
 var directiveTypeStrings = [...]string{
 	"Undefined", // Placeholder - should never be this
 	"Dialog.Delegate",
