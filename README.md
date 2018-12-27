@@ -1,16 +1,18 @@
-# Go Request/Response and Helpers for Alexa Skill Services
+# Go Request/Response models and various Helpers for Alexa Skill Services
+
+This is a fork from https://github.com/arienmalec/alexa-go refactored with a focus on making the models hardtyped and in line with the API docs. 
 
 ### Install
 
 ```console
-go get github.com/arienmalec/alexa-go
+go get github.com/soloworks/alexa-go-models
 ```
 
 ### Usage
 
 #### Response
 
-The `alexa.Response` struct implements the AWS Alexa Skill response, and contains a helper for simple speach responses.
+The `alexa.Response` struct implements the AWS Alexa Skill response, and contains some helpers for common responses.
 
 The following is a minimal AWS Lambda implementing "Hello, World" as an Alexa skill in Go.
 
@@ -18,7 +20,7 @@ The following is a minimal AWS Lambda implementing "Hello, World" as an Alexa sk
 package main
 
 import (
-	"github.com/arienmalec/alexa-go"
+	"github.com/soloworks/alexa-go-models"
 	"github.com/aws/aws-lambda-go/lambda"
 )
 
@@ -42,7 +44,7 @@ The following is a Lambda delivering localized content to users and handling mul
 package main
 
 import (
-	"github.com/arienmalec/alexa-go"
+	"github.com/soloworks/alexa-go-models"
 	"github.com/aws/aws-lambda-go/lambda"
 )
 
@@ -91,5 +93,5 @@ func main() {
 
 ### Credits
 
-Request/Response struct layout influenced by `https://github.com/mikeflynn/go-alexa` which was written before Go was an AWS Lambda native language.
+Used `github.com/arienmalec/alexa-go` as it's based which was influenced by `https://github.com/mikeflynn/go-alexa`
 
