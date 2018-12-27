@@ -1,4 +1,4 @@
-package request
+package alexa
 
 // built in intents
 const (
@@ -14,6 +14,7 @@ const (
 
 // Intent is the Alexa skill intent
 type Intent struct {
-	Name  string          `json:"name"`
-	Slots map[string]Slot `json:"slots"`
+	Name               string             `json:"name"`
+	Slots              map[string]Slot    `json:"slots"`
+	ConfirmationStatus ConfirmationStatus `json:"confirmationStatus"`
 }

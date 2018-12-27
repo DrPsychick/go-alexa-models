@@ -1,4 +1,4 @@
-package request
+package alexa
 
 import (
 	"encoding/json"

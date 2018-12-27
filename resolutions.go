@@ -1,4 +1,4 @@
-package request
+package alexa
 
 // Resolutions is an Alexa skill Resolution
 type Resolutions struct {

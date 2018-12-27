@@ -1,4 +1,4 @@
-package response
+package alexa
 
 // Reprompt is imformation
 type Reprompt struct {

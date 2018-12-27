@@ -1,4 +1,4 @@
-package request
+package alexa
 
 // Slot is an Alexa skill slot
 type Slot struct {

@@ -1,4 +1,4 @@
-package response
+package alexa
 
 // Payload ...
 type Payload struct {

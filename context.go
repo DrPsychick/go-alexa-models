@@ -1,4 +1,4 @@
-package request
+package alexa
 
 // Context represents the Alexa skill request context
 type Context struct {

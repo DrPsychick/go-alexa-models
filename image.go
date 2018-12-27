@@ -1,4 +1,4 @@
-package response
+package alexa
 
 // Image ...
 type Image struct {

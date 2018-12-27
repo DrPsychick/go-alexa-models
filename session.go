@@ -1,4 +1,4 @@
-package request
+package alexa
 
 // Session represents the Alexa skill session
 type Session struct {
