@@ -1,21 +1,21 @@
 package alexa
 
 import (
-	"path/filepath"
-	"io/ioutil"
-	"testing"
 	"encoding/json"
 	"fmt"
+	"io/ioutil"
+	"path/filepath"
 	"strconv"
+	"testing"
 )
 
-func Test_unmarshalling(t *testing.T)  {
+func Test_unmarshalling(t *testing.T) {
 	file := loadTestFile("alexa_request.json", func() {
 		t.Fatal("Unable to read testdata file")
 	})
 
 	var request Request
-	if e := json.Unmarshal(file, &request); e!= nil {
+	if e := json.Unmarshal(file, &request); e != nil {
 		t.Error("Unable to parse json")
 	}
 
@@ -33,9 +33,9 @@ func Test_unmarshalling(t *testing.T)  {
 			t.Errorf("Expected `%s` but was `%s` \n", expectedValue, values[index].Value.Name)
 		}
 
-		expectedId := strconv.Itoa(index)
-		if values[index].Value.Id != expectedId {
-			t.Errorf("Expected `%s` but was `%s` \n", expectedId, values[index].Value.Id)
+		expectedID := strconv.Itoa(index)
+		if values[index].Value.ID != expectedID {
+			t.Errorf("Expected `%s` but was `%s` \n", expectedID, values[index].Value.ID)
 		}
 	}
 

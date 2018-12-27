@@ -41,17 +41,10 @@ const (
 	LocaleJapanese = "ja-JP"
 )
 
+// IsEnglish returns true if locale is English
 func IsEnglish(locale string) bool {
 	switch locale {
-	case LocaleAmericanEnglish:
-		return true
-	case LocaleIndianEnglish:
-		return true
-	case LocaleBritishEnglish:
-		return true
-	case LocaleCanadianEnglish:
-		return true
-	case LocaleAustralianEnglish:
+	case LocaleAmericanEnglish, LocaleIndianEnglish, LocaleBritishEnglish, LocaleCanadianEnglish, LocaleAustralianEnglish:
 		return true
 	default:
 		return false
@@ -98,12 +91,12 @@ type Context struct {
 
 // ReqBody is the actual request information
 type ReqBody struct {
-	Type      string `json:"type"`
-	RequestID string `json:"requestId"`
-	Timestamp string `json:"timestamp"`
-	Locale    string `json:"locale"`
-	Intent    Intent `json:"intent,omitempty"`
-	Reason    string `json:"reason,omitempty"`
+	Type        string `json:"type"`
+	RequestID   string `json:"requestId"`
+	Timestamp   string `json:"timestamp"`
+	Locale      string `json:"locale"`
+	Intent      Intent `json:"intent,omitempty"`
+	Reason      string `json:"reason,omitempty"`
 	DialogState string `json:"dialogState,omitempty"`
 }
 
@@ -115,17 +108,18 @@ type Intent struct {
 
 // Slot is an Alexa skill slot
 type Slot struct {
-	Name  			  string `json:"name"`
-	Value 			  string `json:"value"`
-	Resolutions  Resolutions `json:"resolutions"`
+	Name        string      `json:"name"`
+	Value       string      `json:"value"`
+	Resolutions Resolutions `json:"resolutions"`
 }
 
+// Resolutions is an Alexa skill Resolution
 type Resolutions struct {
-	ResolutionPerAuthority []struct{
-		Values []struct{
-			Value struct{
+	ResolutionPerAuthority []struct {
+		Values []struct {
+			Value struct {
 				Name string `json:"name"`
-				Id   string `json:"id"`
+				ID   string `json:"id"`
 			} `json:"value"`
 		} `json:"values"`
 	} `json:"resolutionsPerAuthority"`
