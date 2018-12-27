@@ -1,23 +1,21 @@
 package response
 
-import "bitbucket.org/solo_works/carrieralexalambda/alexa"
-
-// Response is the response back to the Alexa speech service
+// Response is the response back to the response speech service
 type Response struct {
 	Version           string                 `json:"version"`
 	SessionAttributes map[string]interface{} `json:"sessionAttributes,omitempty"`
 	Body              Body                   `json:"response"`
 }
 
-// NewSpeechResponse builds a simple Alexa session response
-func NewSpeechResponse(speech string) alexa.Response {
-	r := alexa.Response{
+// NewSpeechResponse builds a simple response session response
+func NewSpeechResponse(speech string) Response {
+	r := Response{
 		Version: "1.0",
-		Body: alexa.ResBody{
+		Body: Body{
 			ShouldEndSession: true,
 		},
 	}
-	r.Body.OutputSpeech = &alexa.Payload{
+	r.Body.OutputSpeech = &Payload{
 		Type: "PlainText",
 		Text: speech,
 	}
@@ -25,15 +23,15 @@ func NewSpeechResponse(speech string) alexa.Response {
 	return r
 }
 
-// NewDialogDelegateResponse builds a simple Alexa response to advance to the next step
-func NewDialogDelegateResponse() alexa.Response {
-	r := alexa.Response{
+// NewDialogDelegateResponse builds a simple response response to advance to the next step
+func NewDialogDelegateResponse() Response {
+	r := Response{
 		Version: "1.0",
-		Body: alexa.ResBody{
+		Body: Body{
 			ShouldEndSession: false,
 		},
 	}
-	r.Body.Directives = append(r.Body.Directives, alexa.Directives{Type: "Dialog.Delegate"})
+	r.Body.Directives = append(r.Body.Directives, Directives{Type: "Dialog.Delegate"})
 
 	return r
 }
