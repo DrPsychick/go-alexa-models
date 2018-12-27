@@ -18,6 +18,13 @@ func NewEmptyResponse() Response {
 	return Response{Version: "1.0"}
 }
 
+// NewSimpleTerminateResponse builds an empty response
+func NewSimpleTerminateResponse() Response {
+	r := NewEmptyResponse()
+	r.Body.ShouldEndSession = true
+	return r
+}
+
 // NewSpeechResponse builds a simple speech response
 func NewSpeechResponse(speech string) Response {
 	r := NewEmptyResponse()
